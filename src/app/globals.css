@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-purple-dark: #49257D;
+  --color-purple-deeper: #361F55;
+  --color-purple-light: #5C3D8F;
+  --color-red-brand: #D92314;
+  --color-red-hover: #B81D10;
+  --color-teal: #5BB5B5;
+  --color-teal-dark: #4A9E9E;
+  --color-amber-brand: #E8A025;
+  --color-gray-light: #EFEFEF;
+  --color-gray-card: #F5F5F5;
+  --font-sans: "Montserrat", sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+.logo-crime {
+  color: #D92314;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.logo-stoppers {
+  color: #171717;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 0;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #49257D;
+}
+
+.nav-link.active {
+  color: #49257D;
+}
+
+.card-hover {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.filter-section {
+  background: #EFEFEF;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(54,31,85,0.92) 0%, rgba(73,37,125,0.85) 100%);
+}
+
+.teal-triangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid #5BB5B5;
+  display: inline-block;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.diagonal-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.diagonal-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 50%, rgba(54,31,85,0.85) 50%);
+}
