@@ -8,7 +8,7 @@ export default function QuickExit() {
   return (
     <button
       onClick={handleQuickExit}
-      className="fixed bottom-6 right-6 bg-amber-brand text-white px-5 py-3 rounded-lg font-bold text-sm shadow-lg cursor-pointer hover:brightness-110 transition-all z-50 flex items-center gap-2"
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-amber-brand text-white px-4 py-2.5 md:px-5 md:py-3 rounded-lg font-bold text-xs md:text-sm shadow-lg cursor-pointer hover:brightness-110 transition-all z-50 flex items-center gap-2"
       aria-label="Quick Exit - leaves this site immediately"
     >
       Quick Exit

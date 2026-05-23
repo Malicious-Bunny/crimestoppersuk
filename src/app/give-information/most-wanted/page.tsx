@@ -81,7 +81,7 @@ export default function MostWantedPage() {
                   {selectedRegions.length === 0 ? "All" : `${selectedRegions.length} selected`}
                 </span>
               </div>
-              <div className="h-[200px] overflow-y-scroll space-y-2">
+              <div className="h-[150px] lg:h-[200px] overflow-y-scroll space-y-2">
                 {regions.map((region) => (
                   <label key={region} className="flex items-center gap-2 text-sm cursor-pointer hover:text-purple-dark">
                     <input
@@ -104,7 +104,7 @@ export default function MostWantedPage() {
                   {selectedCrimeTypes.length === 0 ? "All" : `${selectedCrimeTypes.length} selected`}
                 </span>
               </div>
-              <div className="h-[200px] overflow-y-scroll space-y-2">
+              <div className="h-[150px] lg:h-[200px] overflow-y-scroll space-y-2">
                 {crimeTypes.map((type) => (
                   <label key={type} className="flex items-center gap-2 text-sm cursor-pointer hover:text-purple-dark">
                     <input

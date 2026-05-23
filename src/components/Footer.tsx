@@ -79,22 +79,22 @@ export default function Footer() {
 
         {/* Bottom links */}
         <div className="mt-10 pt-6 border-t border-purple-light/30">
-          <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs md:text-sm text-gray-400 mb-4">
             <Link href="#" className="hover:text-white cursor-pointer transition-colors">Site map</Link>
-            <span className="text-purple-light/30">|</span>
+            <span className="text-purple-light/30 hidden sm:inline">|</span>
             <Link href="#" className="hover:text-white cursor-pointer transition-colors">Privacy Policy</Link>
-            <span className="text-purple-light/30">|</span>
+            <span className="text-purple-light/30 hidden sm:inline">|</span>
             <Link href="#" className="hover:text-white cursor-pointer transition-colors">Cookie Policy</Link>
-            <span className="text-purple-light/30">|</span>
+            <span className="text-purple-light/30 hidden sm:inline">|</span>
             <Link href="#" className="hover:text-white cursor-pointer transition-colors">Terms & Conditions</Link>
-            <span className="text-purple-light/30">|</span>
+            <span className="text-purple-light/30 hidden sm:inline">|</span>
             <Link href="#" className="hover:text-white cursor-pointer transition-colors">Jobs</Link>
-            <span className="text-purple-light/30">|</span>
+            <span className="text-purple-light/30 hidden sm:inline">|</span>
             <Link href="#" className="hover:text-white cursor-pointer transition-colors">General enquiries</Link>
-            <span className="text-purple-light/30">|</span>
+            <span className="text-purple-light/30 hidden sm:inline">|</span>
             <Link href="#" className="hover:text-white cursor-pointer transition-colors">Accessibility</Link>
           </div>
-          <p className="text-sm text-gray-400">
+          <p className="text-xs md:text-sm text-gray-400">
             &copy; Crimestoppers Trust, registered charity in England & Wales (1108687), Scotland (SC037960). A company limited by guarantee, registered in England & Wales (5765498).
           </p>
         </div>

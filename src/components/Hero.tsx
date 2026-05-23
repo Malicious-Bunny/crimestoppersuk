@@ -29,10 +29,10 @@ export default function Hero({ title, breadcrumbs, subtitle, showCta = false, ba
         </div>
       )}
 
-      <div className="relative max-w-[1400px] mx-auto px-4 py-12 md:py-20">
+      <div className="relative max-w-[1400px] mx-auto px-4 py-8 md:py-20">
         {/* Breadcrumbs */}
-        <nav className="mb-6" aria-label="breadcrumb">
-          <ol className="flex items-center gap-2 text-sm text-white/70">
+        <nav className="mb-4 md:mb-6" aria-label="breadcrumb">
+          <ol className="flex flex-wrap items-center gap-1.5 md:gap-2 text-xs md:text-sm text-white/70">
             {breadcrumbs.map((crumb, i) => (
               <li key={i} className="flex items-center gap-2">
                 {i > 0 && (
@@ -52,10 +52,10 @@ export default function Hero({ title, breadcrumbs, subtitle, showCta = false, ba
           </ol>
         </nav>
 
-        <h1 className="text-4xl md:text-6xl font-bold text-white max-w-3xl">{title}</h1>
+        <h1 className="text-3xl md:text-6xl font-bold text-white max-w-3xl">{title}</h1>
 
         {subtitle && (
-          <p className="mt-4 text-lg text-white/80 max-w-2xl leading-relaxed">{subtitle}</p>
+          <p className="mt-3 md:mt-4 text-base md:text-lg text-white/80 max-w-2xl leading-relaxed">{subtitle}</p>
         )}
 
         {showCta && (

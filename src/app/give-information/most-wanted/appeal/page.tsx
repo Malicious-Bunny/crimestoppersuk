@@ -36,11 +36,11 @@ function AppealContent() {
         showCta
       />
 
-      <div className="max-w-[1400px] mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="max-w-[1400px] mx-auto px-4 py-6 md:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10">
           {/* Photo */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-100 border border-gray-200 aspect-[3/4] flex items-center justify-center overflow-hidden">
+            <div className="bg-gray-100 border border-gray-200 aspect-square sm:aspect-[3/4] max-h-[400px] sm:max-h-none flex items-center justify-center overflow-hidden mx-auto w-full max-w-[300px] sm:max-w-none">
               {person.image ? (
                 <img
                   src={person.image}
@@ -132,19 +132,19 @@ function AppealContent() {
             </section>
 
             {/* CTA */}
-            <div className="bg-gray-light p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-purple-deeper mb-2">Do you have information?</h3>
-              <p className="text-gray-600 mb-4">If you have any information about this person, please contact Crimestoppers anonymously.</p>
-              <div className="flex flex-wrap gap-3">
+            <div className="bg-gray-light p-4 md:p-6 rounded-lg">
+              <h3 className="text-lg md:text-xl font-bold text-purple-deeper mb-2">Do you have information?</h3>
+              <p className="text-gray-600 mb-4 text-sm md:text-base">If you have any information about this person, please contact Crimestoppers anonymously.</p>
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="#"
-                  className="bg-red-brand text-white px-6 py-3 rounded-lg font-semibold cursor-pointer hover:bg-red-hover transition-colors"
+                  className="bg-red-brand text-white px-6 py-3 rounded-lg font-semibold cursor-pointer hover:bg-red-hover transition-colors text-center"
                 >
                   Give information online
                 </Link>
                 <Link
                   href="tel:0800555111"
-                  className="border-2 border-purple-dark text-purple-dark px-6 py-3 rounded-lg font-semibold cursor-pointer hover:bg-purple-dark hover:text-white transition-colors"
+                  className="border-2 border-purple-dark text-purple-dark px-6 py-3 rounded-lg font-semibold cursor-pointer hover:bg-purple-dark hover:text-white transition-colors text-center"
                 >
                   Call 0800 555 111
                 </Link>
