@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "News & Media",
+  description:
+    "Latest news, press releases, and campaign updates from Crimestoppers UK.",
+};
 
 const newsArticles = [
   {

@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Keeping Safe",
+  description:
+    "Advice and guidance on staying safe — personal safety, online safety, knife crime, fraud, and more from Crimestoppers.",
+};
 
 const categories = [
   {

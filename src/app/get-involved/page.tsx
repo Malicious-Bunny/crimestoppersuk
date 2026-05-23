@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Get Involved",
+  description:
+    "Support Crimestoppers — donate, volunteer, fundraise, or partner with us to help fight crime across the UK.",
+};
 
 const ways = [
   {

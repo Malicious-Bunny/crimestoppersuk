@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Crimestoppers, the independent UK charity that takes information about crime 100% anonymously.",
+};
 
 export default function AboutUsPage() {
   return (
