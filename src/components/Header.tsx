@@ -11,17 +11,17 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="relative z-50 bg-white">
       {/* Top bar */}
       <div className="bg-gray-light border-b border-gray-200">
         <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-10">
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-2 text-sm font-semibold cursor-pointer hover:opacity-80 transition-opacity">
-              <span className="bg-red-brand text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">Cs</span>
+              <img src="https://crimestoppers-uk.org/getContentAsset/94f688ef-3a6d-4dbb-823b-e003ce8d5e57/0d97e4a9-e9ea-4e9e-bc2b-b08a6eae8854/switcher-CS-2x.png" alt="Crimestoppers" className="h-5 w-auto" />
               Crimestoppers
             </Link>
             <Link href="#" className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer hover:opacity-80 transition-opacity">
-              <span className="bg-purple-dark text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">f</span>
+              <img src="https://crimestoppers-uk.org/getContentAsset/c29653d4-0c02-4447-8153-85092760383a/0d97e4a9-e9ea-4e9e-bc2b-b08a6eae8854/switcher-F-2x.png" alt="Fearless" className="h-5 w-auto" />
               Fearless - our youth service
             </Link>
           </div>
@@ -79,18 +79,13 @@ export default function Header() {
       {/* Main header */}
       <div className="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
         <div>
-          <Link href="/" className="cursor-pointer">
-            <h1 className="text-3xl md:text-4xl tracking-tight">
-              <span className="logo-crime">Crime</span>
-              <span className="logo-stoppers">Stoppers.</span>
-            </h1>
+          <Link href="/" className="cursor-pointer block">
+            <img
+              src="https://crimestoppers-uk.org/getContentAsset/a3fd999c-1a7a-45a3-acbc-a3a932ebe35b/0d97e4a9-e9ea-4e9e-bc2b-b08a6eae8854/crimestoppers-logo.svg"
+              alt="CrimeStoppers"
+              className="h-24 md:h-28 w-auto"
+            />
           </Link>
-          <div className="mt-1">
-            <Link href="tel:0800555111" className="text-2xl md:text-3xl font-bold text-purple-dark hover:underline cursor-pointer">
-              0800 555 111
-            </Link>
-            <p className="text-sm text-purple-dark font-semibold italic">100% anonymous. Always.</p>
-          </div>
         </div>
 
         <div className="hidden md:flex items-center gap-3">

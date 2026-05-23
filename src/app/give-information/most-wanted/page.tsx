@@ -10,8 +10,6 @@ export default function MostWantedPage() {
   const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
   const [selectedCrimeTypes, setSelectedCrimeTypes] = useState<string[]>([]);
   const [keyword, setKeyword] = useState("");
-  const [showRegions, setShowRegions] = useState(false);
-  const [showCrimeTypes, setShowCrimeTypes] = useState(false);
   const [filtersApplied, setFiltersApplied] = useState(false);
 
   const filteredPersons = useMemo(() => {
@@ -56,6 +54,7 @@ export default function MostWantedPage() {
           { label: "Most Wanted" },
         ]}
         subtitle="Exposing those wanted by UK law enforcement. Search below by UK region, keyword or crime type, and give information 100% anonymously by calling 0800 555 111 or through our online form."
+        backgroundImage="https://crimestoppers-uk.org/getContentAsset/0deebd7e-1630-4177-ad57-d28d0d176afe/0d97e4a9-e9ea-4e9e-bc2b-b08a6eae8854/1800/shutterstock-man-on-phone-flipped-002-cropped-1800.jpg"
       />
 
       <div className="max-w-[1400px] mx-auto px-4">
@@ -71,115 +70,84 @@ export default function MostWantedPage() {
       </div>
 
       {/* Filters */}
-      <div className="bg-gray-light mt-6">
+      <div className="bg-[#EDEDED] mt-6">
         <div className="max-w-[1400px] mx-auto px-4 py-6">
-          <div className="flex flex-col lg:flex-row gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-300">
             {/* Region filter */}
-            <div className="flex-1">
-              <button
-                onClick={() => setShowRegions(!showRegions)}
-                className="w-full flex items-center justify-between bg-white border border-gray-300 px-4 py-3 text-left cursor-pointer hover:border-purple-dark transition-colors"
-              >
-                <div>
-                  <span className="text-sm text-gray-500">Showing Region(s):</span>
-                  <span className="ml-2 font-semibold text-sm">
-                    {selectedRegions.length === 0 ? "All" : selectedRegions.join(", ")}
-                  </span>
-                </div>
-                <svg className={`w-4 h-4 transition-transform ${showRegions ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {showRegions && (
-                <div className="bg-white border border-t-0 border-gray-300 p-4 max-h-60 overflow-y-auto">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {regions.map((region) => (
-                      <label key={region} className="flex items-center gap-2 text-sm cursor-pointer hover:text-purple-dark">
-                        <input
-                          type="checkbox"
-                          checked={selectedRegions.includes(region)}
-                          onChange={() => toggleRegion(region)}
-                          className="accent-purple-dark cursor-pointer"
-                        />
-                        {region}
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Crime type filter */}
-            <div className="flex-1">
-              <button
-                onClick={() => setShowCrimeTypes(!showCrimeTypes)}
-                className="w-full flex items-center justify-between bg-white border border-gray-300 px-4 py-3 text-left cursor-pointer hover:border-purple-dark transition-colors"
-              >
-                <div>
-                  <span className="text-sm text-gray-500">Crime type(s):</span>
-                  <span className="ml-2 font-semibold text-sm">
-                    {selectedCrimeTypes.length === 0 ? "All" : selectedCrimeTypes.join(", ")}
-                  </span>
-                </div>
-                <svg className={`w-4 h-4 transition-transform ${showCrimeTypes ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {showCrimeTypes && (
-                <div className="bg-white border border-t-0 border-gray-300 p-4">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {crimeTypes.map((type) => (
-                      <label key={type} className="flex items-center gap-2 text-sm cursor-pointer hover:text-purple-dark">
-                        <input
-                          type="checkbox"
-                          checked={selectedCrimeTypes.includes(type)}
-                          onChange={() => toggleCrimeType(type)}
-                          className="accent-purple-dark cursor-pointer"
-                        />
-                        {type}
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Keyword search */}
-            <div className="flex-1">
-              <div className="flex">
-                <div className="flex-1">
-                  <span className="text-sm text-gray-500 block mb-1 px-1">Keyword Search:</span>
-                  <input
-                    type="text"
-                    placeholder="Keyword"
-                    value={keyword}
-                    onChange={(e) => setKeyword(e.target.value)}
-                    className="w-full border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-dark"
-                  />
-                </div>
+            <div className="pb-4 lg:pb-0 lg:pr-6">
+              <div className="flex items-baseline justify-between mb-3">
+                <h3 className="font-bold text-sm">Showing Region(s):</h3>
+                <span className="text-sm">
+                  {selectedRegions.length === 0 ? "All" : `${selectedRegions.length} selected`}
+                </span>
+              </div>
+              <div className="h-[200px] overflow-y-scroll space-y-2">
+                {regions.map((region) => (
+                  <label key={region} className="flex items-center gap-2 text-sm cursor-pointer hover:text-purple-dark">
+                    <input
+                      type="checkbox"
+                      checked={selectedRegions.includes(region)}
+                      onChange={() => toggleRegion(region)}
+                      className="accent-purple-dark cursor-pointer"
+                    />
+                    {region}
+                  </label>
+                ))}
               </div>
             </div>
 
-            {/* Buttons */}
-            <div className="flex items-end gap-2">
+            {/* Crime type filter */}
+            <div className="py-4 lg:py-0 lg:px-6">
+              <div className="flex items-baseline justify-between mb-3">
+                <h3 className="font-bold text-sm">Crime type(s):</h3>
+                <span className="text-sm">
+                  {selectedCrimeTypes.length === 0 ? "All" : `${selectedCrimeTypes.length} selected`}
+                </span>
+              </div>
+              <div className="h-[200px] overflow-y-scroll space-y-2">
+                {crimeTypes.map((type) => (
+                  <label key={type} className="flex items-center gap-2 text-sm cursor-pointer hover:text-purple-dark">
+                    <input
+                      type="checkbox"
+                      checked={selectedCrimeTypes.includes(type)}
+                      onChange={() => toggleCrimeType(type)}
+                      className="accent-purple-dark cursor-pointer"
+                    />
+                    {type}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Keyword search */}
+            <div className="pt-4 lg:pt-0 lg:pl-6">
+              <div className="flex items-baseline justify-between mb-3">
+                <h3 className="font-bold text-sm">Keyword Search:</h3>
+                <span className="text-sm">{keyword || "None"}</span>
+              </div>
+              <label className="block text-sm mb-1">Keyword</label>
+              <input
+                type="text"
+                placeholder="Keyword"
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                className="w-full border border-gray-300 bg-white px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-dark"
+              />
               <button
                 onClick={() => setFiltersApplied(true)}
-                className="bg-teal text-white px-8 py-3 font-semibold cursor-pointer hover:bg-teal-dark transition-colors whitespace-nowrap"
+                className="mt-4 w-full bg-teal text-white py-3.5 font-semibold text-lg cursor-pointer hover:brightness-110 transition-all"
                 style={{ clipPath: 'polygon(0 0, 100% 0, 95% 100%, 0 100%)' }}
               >
                 Apply Filters
               </button>
+              <button
+                onClick={resetFilters}
+                className="mt-2 text-purple-dark font-semibold text-sm cursor-pointer hover:underline"
+              >
+                Reset filters
+              </button>
             </div>
           </div>
-
-          {(filtersApplied || keyword) && (
-            <button
-              onClick={resetFilters}
-              className="mt-3 text-purple-dark font-semibold text-sm cursor-pointer hover:underline"
-            >
-              Reset filters
-            </button>
-          )}
         </div>
       </div>
 
@@ -201,20 +169,6 @@ export default function MostWantedPage() {
           </div>
         )}
 
-        {/* Pagination */}
-        {filteredPersons.length > 0 && (
-          <div className="flex justify-center items-center gap-2 mt-10">
-            <span className="bg-purple-dark text-white w-10 h-10 flex items-center justify-center rounded font-semibold cursor-pointer">1</span>
-            <span className="bg-gray-200 text-gray-700 w-10 h-10 flex items-center justify-center rounded font-semibold cursor-pointer hover:bg-purple-dark hover:text-white transition-colors">2</span>
-            <span className="bg-gray-200 text-gray-700 w-10 h-10 flex items-center justify-center rounded font-semibold cursor-pointer hover:bg-purple-dark hover:text-white transition-colors">3</span>
-            <span className="text-gray-500">...</span>
-            <span className="bg-gray-200 text-gray-700 w-10 h-10 flex items-center justify-center rounded font-semibold cursor-pointer hover:bg-purple-dark hover:text-white transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -40,10 +40,18 @@ function AppealContent() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Photo */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-100 border border-gray-200 aspect-[3/4] flex items-center justify-center">
-              <svg className="w-32 h-32 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+            <div className="bg-gray-100 border border-gray-200 aspect-[3/4] flex items-center justify-center overflow-hidden">
+              {person.image ? (
+                <img
+                  src={person.image}
+                  alt={`${person.name} wanted for ${person.crimeType}`}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <svg className="w-32 h-32 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              )}
             </div>
           </div>
 
