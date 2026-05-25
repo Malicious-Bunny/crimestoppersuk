@@ -3,7 +3,6 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuickExit from "@/components/QuickExit";
 import CtaBar from "@/components/CtaBar";
 
 const montserrat = Montserrat({
@@ -67,7 +66,6 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <CtaBar />
         <Footer />
-        <QuickExit />
       </body>
     </html>
   );

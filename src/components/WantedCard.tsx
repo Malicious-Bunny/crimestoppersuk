@@ -8,7 +8,7 @@ interface WantedCardProps {
 export default function WantedCard({ person }: WantedCardProps) {
   return (
     <Link
-      href={`/give-information/most-wanted/appeal?id=${person.id}`}
+      href={`/give-information/most-wanted/appeal/${person.id}`}
       className="bg-white shadow-[0_2px_6px_rgba(0,0,0,0.3)] cursor-pointer block group"
     >
       <figure className="h-[250px] overflow-hidden flex items-center justify-center bg-gray-100">

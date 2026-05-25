@@ -1,26 +1,18 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 import Hero from "@/components/Hero";
 import Link from "next/link";
 import { wantedPersons } from "@/data/wanted";
+import { notFound } from "next/navigation";
 
-function AppealContent() {
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+export default async function AppealPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   const person = wantedPersons.find((p) => p.id === Number(id));
 
   if (!person) {
-    return (
-      <div className="max-w-[1400px] mx-auto px-4 py-16 text-center">
-        <h2 className="text-2xl font-bold text-purple-deeper">Appeal not found</h2>
-        <p className="mt-4 text-gray-600">The appeal you are looking for does not exist.</p>
-        <Link href="/give-information/most-wanted" className="mt-6 inline-block bg-purple-dark text-white px-8 py-3 rounded-lg font-semibold cursor-pointer hover:bg-purple-light transition-colors">
-          Back to Most Wanted
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   return (
@@ -154,13 +146,5 @@ function AppealContent() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function AppealPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <AppealContent />
-    </Suspense>
   );
 }
