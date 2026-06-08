@@ -37,6 +37,32 @@ export const crimeTypes = [
 
 export const wantedPersons: WantedPerson[] = [
   {
+    id: 60003,
+    name: "Kamiende Benedicte NDONDA",
+    crimeType: "Fraud by False Representation",
+    crimeCategory: "Fraud",
+    location: "London, UK",
+    region: "London",
+    image: "/images/wanted/kamiende-benedicte-ndonda.png",
+    summary: "Kamiende Benedicte NDONDA wanted for fraud against the DVLA",
+    details: "NDONDA is wanted in connection with double-crossing the DVLA to obtain a registered driver's licence by false representation. Last known address: Flat 1, Dale Court, Grove Hill, London E16 2JD.",
+    policeForce: "Metropolitan Police",
+    crimeLocation: "London",
+  },
+  {
+    id: 60004,
+    name: "Sarah KINDA",
+    crimeType: "Fraud by False Representation",
+    crimeCategory: "Fraud",
+    location: "London, UK",
+    region: "London",
+    image: "/images/wanted/sarah-kinda.png",
+    summary: "Sarah KINDA wanted for fraud against the DVLA",
+    details: "KINDA is wanted in connection with double-crossing the DVLA to obtain a registered driver's licence by false representation. Last known address: 24 Milestone Close, London N9 9GA.",
+    policeForce: "Metropolitan Police",
+    crimeLocation: "London",
+  },
+  {
     id: 60001,
     name: "Praharshitha SUNDARAMOORTHY",
     crimeType: "Fraud & Outstanding Debt (£750)",
