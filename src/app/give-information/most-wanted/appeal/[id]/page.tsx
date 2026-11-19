@@ -45,6 +45,25 @@ export default async function AppealPage({
                 </svg>
               )}
             </div>
+
+            {/* Additional Images */}
+            {person.additionalImages && person.additionalImages.length > 0 && (
+              <div className="mt-6 space-y-4">
+                <h3 className="text-lg font-bold text-purple-deeper">Identifying Images</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {person.additionalImages.map((img, idx) => (
+                    <div key={idx} className="bg-gray-100 border border-gray-200 flex flex-col items-center justify-center overflow-hidden">
+                      <img
+                        src={img.url}
+                        alt={img.label}
+                        className="w-full h-full object-contain p-2"
+                      />
+                      <p className="text-xs font-semibold text-gray-700 mt-2 mb-2 text-center px-2">{img.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Info sidebar */}

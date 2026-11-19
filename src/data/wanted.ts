@@ -15,6 +15,10 @@ export interface WantedPerson {
   build?: string;
   hair?: string;
   complexion?: string;
+  additionalImages?: {
+    url: string;
+    label: string;
+  }[];
 }
 
 export const regions = [
@@ -48,6 +52,11 @@ export const wantedPersons: WantedPerson[] = [
     details: "BISHAL is wanted in connection with fraud, impersonation, and an outstanding debt of £400. Last known location: Nepal.",
     policeForce: "Other Law Enforcement",
     crimeLocation: "International",
+    additionalImages: [
+      { url: "/images/wanted/tamang-bishal-passport.jpg", label: "Passport" },
+      { url: "/images/wanted/tamang-bishal-fingerprint-right.jpg", label: "Fingerprint - Right" },
+      { url: "/images/wanted/tamang-bishal-fingerprint-left.jpg", label: "Fingerprint - Left" },
+    ],
   },
   {
     id: 60003,
