@@ -37,6 +37,19 @@ export const crimeTypes = [
 
 export const wantedPersons: WantedPerson[] = [
   {
+    id: 60005,
+    name: "Tamang Bishal",
+    crimeType: "Fraud, Impersonation & Outstanding Debt (£400)",
+    crimeCategory: "Fraud",
+    location: "Nepal",
+    region: "Nationwide",
+    image: "/images/wanted/tamang-bishal.jpg",
+    summary: "Tamang Bishal wanted for Fraud, Impersonation and Outstanding Debt of £400",
+    details: "BISHAL is wanted in connection with fraud, impersonation, and an outstanding debt of £400. Last known location: Nepal.",
+    policeForce: "Other Law Enforcement",
+    crimeLocation: "International",
+  },
+  {
     id: 60003,
     name: "Kamiende Benedicte NDONDA",
     crimeType: "Fraud by False Representation",
